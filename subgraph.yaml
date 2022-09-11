@@ -1,0 +1,23 @@
+specVersion: 0.0.1
+schema:
+  file: ./schema.graphql
+dataSources:
+  - kind: ethereum
+    name: Factory
+    network: arbitrum-one
+    source:
+      address: "0x359F20Ad0F42D75a5077e65F30274cABe6f4F01a"
+      abi: Factory
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.5
+      language: wasm/assemblyscript
+      entities:
+        - PairCreated
+      abis:
+        - name: Factory
+          file: ./abis/Factory.json
+      eventHandlers:
+        - event: PairCreated(indexed address,indexed address,address,uint256)
+          handler: handlePairCreated
+      file: ./src/factory.ts
