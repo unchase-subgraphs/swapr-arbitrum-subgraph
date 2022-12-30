@@ -29,6 +29,7 @@ export function handleSync(event: Sync): void {
     return
   }
   
+  pair.syncAtTimestamp = event.block.timestamp;
   pair.reserve0 = convertTokenToDecimal(event.params.reserve0, token0.decimals)
   pair.reserve1 = convertTokenToDecimal(event.params.reserve1, token1.decimals)
 

@@ -4,6 +4,7 @@ import { Pair as PairTemplate } from "../generated/templates";
 import { PairCreated } from "../generated/Factory/Factory";
 import {
   ZERO_BD,
+  ZERO_BI,
   fetchTokenSymbol,
   fetchTokenName,
   fetchTokenDecimals,
@@ -43,6 +44,7 @@ export function handlePairCreated(event: PairCreated): void {
   pair.reserve1 = ZERO_BD;
   pair.token0Price = ZERO_BD;
   pair.token1Price = ZERO_BD;
+pair.syncAtTimestamp = ZERO_BI;
   pair.createdAtBlockNumber = event.block.number;
   pair.createdAtTimestamp = event.block.timestamp;
   pair.save();

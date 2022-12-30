@@ -25,4 +25,7 @@ type Pair @entity {
   # creation stats
   createdAtTimestamp: BigInt!
   createdAtBlockNumber: BigInt!
+
+  # update stats
+  syncAtTimestamp: BigInt!
 }
